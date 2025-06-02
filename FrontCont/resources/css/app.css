@@ -1,11 +1,59 @@
-@import 'tailwindcss';
+body {
+    background-color: #d3d3d3;
+    min-height: 100vh;
+    padding: 0;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+main {
+    display: flex; /* adiciona o layout lado a lado */
+    min-height: calc(100vh - 160px); /* altura total menos header, nav e footer */
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* Section (lado esquerdo) */
+section {
+    flex: 1;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Aside (lado direito) */
+aside {
+    flex: 1;
+    background-color: #7e7e7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+.cadastro-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.cadastro-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.aside-text {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.aside-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
 }

@@ -1,0 +1,79 @@
+:root {
+    --tamanho-botao: 25vh;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.cad-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 2%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-cad {
+    width: 47vh;
+    height: 5vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+} 
+
+.input-tel {
+    position: absolute;
+    width: 97vh;
+    height: 5vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center
+}
+
+.cad-button {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.button-cad {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 2vh;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}-
+
+.button-cad:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.link-cad {
+    text-decoration: none;
+    color: #000;
+    font-size: 2vh;
+}
+
+.link-cad:hover {
+    color: #535353;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 50%;
+    padding: 2%;
+    box-shadow: 0 0 10px 0 #000;
+}
