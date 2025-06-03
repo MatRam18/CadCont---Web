@@ -1,69 +1,90 @@
-/* Estilos gerais */
-
+:root {
+    --tamanho:60px;
+}
 
 body {
-    background-color: #f5f5f5;
-    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
-
-
-header h1 {
-    margin: 0.5rem 0;
-}
-
-/* Navegação */
-nav {
-    background-color: #444;
-    padding: 1rem 0;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
-
-/* Main */
-main {
-    padding: 2rem;
-    text-align: center;
-}
-
-main section h1 {
-    color: #333;
-    margin-bottom: 2rem;
-}
-
-/* Aside */
 aside {
-    padding: 2rem;
-    background-color: white;
-    margin: 2rem;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px #C170FF;
+    min-height: 80vh;
+    position: relative;
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content-box {
+    background-color: #f1f1f1;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px #C170FF;
 }
 
-aside h1 {
+.content-box h2 {
+    margin-top: 0;
     color: #333;
-    margin-bottom: 1rem;
 }
 
-aside p {
-    margin-bottom: 1rem;
-    color: #666;
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
 }
 
+.image-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #C170FF;
+}
+
+.image-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+    transition: all 0.3s ease;  
+}
+
+.button-icon {
+    width: var(--tamanho);
+    height: var(--tamanho);
+    object-fit: contain;
+}
+
+.button {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

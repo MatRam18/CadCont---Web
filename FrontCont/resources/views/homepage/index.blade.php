@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">  
+    
 </head>
 <body>
-    <header>
-        <h1>
-            CAD CONTACT
-        </h1>
-        <h1>
-            Cadastro de Contatos
-        </h1>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="/profile">Perfil</a>
-                <a href="http://eelslap.com/">Serviços</a>
-                <button onclick="window.location.href='/login'">Sair</button>
-            </li>
-        </ul>
-    </nav>
+    <aside>
+        <div class="button-container">
+            <button class="image-button">
+                <img src="{{ asset('images/Criar.png') }}" alt="Contato" class="button-icon">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="image-button">
+                <img src="{{ asset('images/logout.png') }}" alt="Logout" class="button-icon">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="image-button">
+                <img src="{{ asset('images/Profile.png') }}" alt="Perfil" class="button-icon">
+            </button>
+        </div>
+    </aside>
     <main>
-        <section>                
-            <h1>Bem-vindo, </h1>
-            <button onclick="window.location.href='/newcontact'">Novo Contato</button>
+        <article class="content-box">
+            <h2>Artigo</h2>
+            <p>Conteúdo do artigo aqui</p>
+        </article>
+        <section class="content-box">
+            <h2>Seção</h2>
+            <p>Conteúdo da seção aqui</p>
         </section>
     </main>
-    <footer>
-        <p>
-            &copy; 2024 Cadastro de Contatos. Todos os direitos reservados.
-        </p>
-    </footer>
 </body>
 </html>
