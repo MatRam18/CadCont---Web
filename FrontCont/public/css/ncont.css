@@ -1,13 +1,14 @@
 :root {
     --tamanho:60px;
 }
-
+/* Principais */
 body {
     display: grid;
     grid-template-columns: 110px 1fr;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 aside {
@@ -25,20 +26,35 @@ aside {
 
 main {
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-/* Article e Section */
+/* Section */
 .content-box {
     background-color: #f1f1f1;
     padding: 18px;
     border-radius: 8px;
     box-shadow: 0 2px 5px #C170FF;
+    width:100vh;
     max-height: 88vh; /* Ajuste conforme necessário para 5 contatos */
-    overflow-y: auto;
     padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+}
+
+.detalhes-item {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #C170FF;
+    height: 65vh;
+    background-color: #ffff;
+    position: relative;
+    padding-bottom: 80px;
 }
 
 .content-detalhe{
@@ -47,10 +63,12 @@ main {
     margin-bottom: 20px;
 }
 
-.content-box h2 {
-    margin-top: 0;
-    color: #333;
+.edit-input-field {
+    width: 98%;
 }
+
+
+
 
 /* Botões da lateral */
 .button-container {
@@ -88,87 +106,22 @@ main {
 }
 
 
+/* Botão de confirmar */
 
-.button {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-item {
-    background-color: #ffffff;
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #C170FF;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-.contact-item:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.03);
-    transition: all 0.3s ease;  
-}
-
-.detalhes-item {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #C170FF;
-    height: 65vh;
-    background-color: #ffff;
-    position: relative;
-    padding-bottom: 80px;
-}
-
-/* Botões de editar */
-
-.button-p {
-    background-color: #68ffd9;
-    position: absolute;
-    bottom: 3vh;
-    left: 3vh;
-    border: #f1f1f1;
-    border-radius: 5px;
-    font-size: 5vh;
-    padding: 3vh;
-    box-shadow: 0 2px 5px #C170FF;
-}
-.button-p:hover {
+.button-confirm {
     background-color: #64ff9f;
-    transform: scale(1.1);
-    transition: all 0.3s ease;  
-}
-
-.button-n {
-    background-color: #ff7070;
     position: absolute;
     bottom: 3vh;
-    right: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
     border: #f1f1f1;
     border-radius: 5px;
     font-size: 5vh;
     padding: 3vh;
     box-shadow: 0 2px 5px #C170FF;
 }
-
-.button-n:hover {
-    background-color: #ce64ff;
-    transform: scale(1.1);
+.button-confirm:hover {
+    background-color: #f0ff68;
+    transform: translateX(-50%) scale(1.1);
     transition: all 0.3s ease;  
-}
-
-.edit-input-field {
-    width: 98%;
 }

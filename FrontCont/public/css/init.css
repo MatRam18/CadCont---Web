@@ -1,0 +1,95 @@
+:root {
+    --tamanho:60px;
+}
+@keyframes changeColor {
+    0%   { color: #C170FF; }
+    25%  { color: #FF70A6; }
+    50%  { color: #70FFDA; }
+    75%  { color: #FFD670; }
+    100% { color: #C170FF; }
+}
+
+body {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    margin: 0;
+    padding: 0;
+    padding: 5vh;
+}
+.title {
+    background-color: #f1f1f1;
+    padding: 18px;
+    position: fixed;
+    left: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #C170FF;
+    width: 100vh;
+    height: 10vh;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-text{
+    font-style: bold;
+    font-size: 8vh;
+    
+    animation: changeColor 5s infinite linear;
+}
+
+.content-box {
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 25vh;
+    left: 50vh;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #C170FF;
+    width: 100vh;
+    height: 60vh; /* Ajuste conforme necessário para 5 contatos */
+    padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+}
+
+.welcome-message{
+    background-color: #ffff;
+    position: absolute;
+    width: 40vh;
+    height: 50vh;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px #b24eff;
+}
+
+.button-container {
+    background-color: #ffffff;
+    position: absolute;
+    right: 3vh;
+    width: 40vh;
+    height: 50vh;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px #FF97EE;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #FF97EE;
+    height: 24vh;
+    width: 40vh;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+button:hover {
+    background-color: #b798ff;
+    transform: scale(1.1);
+    transition: all 0.3s ease;  
+}
