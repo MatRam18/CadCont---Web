@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="{{ asset('css/ncont.css') }}">  
+    <link rel="stylesheet" href="{{ asset('css/ncont.css') }}?v=1.0">  
     
 </head>
 <body>
@@ -94,12 +94,21 @@
                                 'X-CSRF-TOKEN': csrfToken
                             },
                             body: JSON.stringify({
-                                nome: nome,
-                                email: email,
-                                idade: idade,
-                                telefone: telefone
+                                "Nome": nome,
+                                "email": email,
+                                "idade": idade,
+                                "telefone": telefone
                             })
                         });
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+
+                        const contentType = response.headers.get("content-type");
+                        if (!contentType || !contentType.includes("application/json")) {
+                            throw new TypeError("A resposta não é JSON!");
+                        }
 
                         const data = await response.json();
 
@@ -107,11 +116,15 @@
                             alert(data.message);
                             window.location.href = '/homepage';
                         } else {
-                            alert(data.message);
+                            alert(data.message || 'Erro ao criar contato');
                         }
                     } catch (error) {
                         console.error('Erro ao enviar o formulário:', error);
-                        alert('Ocorreu um erro ao tentar criar o contato. Por favor, tente novamente.');
+                        if (error instanceof TypeError) {
+                            alert('Erro no formato da resposta do servidor. Por favor, tente novamente.');
+                        } else {
+                            alert('Ocorreu um erro ao tentar criar o contato. Por favor, tente novamente.');
+                        }
                     }
                 });
             }

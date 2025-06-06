@@ -49,31 +49,62 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info('Requisição de criação de contato recebida.', $request->only('nome', 'idade', 'telefone', 'email'));
+        try {
+            $dados = $request->only('Nome', 'idade', 'telefone', 'email');
+            
+            Log::info('Dados recebidos do formulário:', $dados);
 
-        $response = Http::post($this->urlApi, $request->only('nome', 'idade', 'telefone', 'email'));
+            if (empty($dados)) {
+                Log::error('Nenhum dado recebido do formulário');
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Nenhum dado recebido do formulário'
+                ], 400);
+            }
 
-        Log::info('Resposta da API externa:', [
-            'status' => $response->status(),
-            'successful' => $response->successful(),
-            'body' => $response->body(),
-            'json' => $response->json()
-        ]);
-
-        if ($response->successful()) {
-            return view('newcontact.index', [
-                'success' => 'Contato criado com sucesso!',
-                'error' => '' // Garante que a variável 'error' esteja sempre definida
+            Log::info('Enviando requisição para API:', [
+                'url' => $this->urlApi,
+                'dados' => $dados
             ]);
+
+            $response = Http::post($this->urlApi, $dados);
+
+            Log::info('Resposta da API:', [
+                'status' => $response->status(),
+                'body' => $response->body()
+            ]);
+
+            if ($response->successful()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Contato criado com sucesso!'
+                ]);
+            }
+
+            $data = $response->json();
+            $statusCode = $response->status();
+            
+            Log::error('Erro na API:', [
+                'status' => $statusCode,
+                'response' => $data
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => $data['message'] ?? 'Erro ao criar o contato. Tente novamente mais tarde.'
+            ], $statusCode);
+
+        } catch (\Exception $e) {
+            Log::error('Erro ao processar requisição:', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Erro interno do servidor. Por favor, tente novamente mais tarde.'
+            ], 500);
         }
-
-        $data = $response->json();
-        $errorMessage = $data['message'] ?? 'Erro ao criar o contato. Tente novamente mais tarde.';
-
-        return view('newcontact.index', [
-            'success' => '', // Garante que a variável 'success' esteja sempre definida
-            'error' => $errorMessage
-        ]);
     }
 
     public function edit($id)
