@@ -34,5 +34,14 @@
             </div>
         </section>
     </main>
+    <script>
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            window.location.href = '/cadastro';
+        });
+
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            window.location.href = '/login';
+        });
+    </script>
 </body>
 </html>

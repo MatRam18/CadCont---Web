@@ -1,0 +1,34 @@
+body {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    margin: 0;
+    padding: 0;
+    padding: 5vh;
+}
+.title {
+    background-color: #f1f1f1;
+    padding: 18px;
+    position: fixed;
+    left: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #C170FF;
+    width: 100vh;
+    height: 10vh;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box {
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 25vh;
+    left: 50vh;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #C170FF;
+    width: 100vh;
+    height: 60vh; /* Ajuste conforme necessário para 5 contatos */
+    padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+}

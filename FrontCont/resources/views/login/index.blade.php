@@ -3,26 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/login.css')
-    @vite('resources/css/footer.css')
-    @vite('resources/css/header.css')
-    @vite('resources/css/nav.css')
     <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('css/log.css') }}">  
 </head>
 <body>
-    <header>
-        <h1>
-            CAD CONTACT
-        </h1>
-        <h1>
-            Cadastro de Contatos
-        </h1>
-    </header>
     <main>
-        <div class="login-title">
+        <div class="title">
             <h1> Login </h1>
         </div>
-        <section>
+        <section class="content-box">
             <form action="">
                 <div>
                     <h3> Email </h3>
@@ -42,10 +31,5 @@
             </form>
         </section>
     </main>
-    <footer>
-        <p>
-            &copy; 2024 Cadastro de Contatos. Todos os direitos reservados.
-        </p>
-    </footer>
 </body>
 </html>
