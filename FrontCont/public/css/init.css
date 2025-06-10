@@ -1,6 +1,11 @@
 :root {
-    --tamanho:60px;
+    --primary-color: #7b2ff7;
+    --secondary-color: #f107a3;
+    --shadow-color: rgba(123, 47, 247, 0.3);
+    --btn-shadow-color: rgba(241, 7, 163, 0.3);
+    --border-radius: 12px;
 }
+
 @keyframes changeColor {
     0%   { color: #C170FF; }
     25%  { color: #FF70A6; }
@@ -9,87 +14,115 @@
     100% { color: #C170FF; }
 }
 
-body {
-    display: grid;
-    grid-template-columns: 110px 1fr;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    padding: 5vh;
+    box-sizing: border-box;
 }
-.title {
-    background-color: #f1f1f1;
-    padding: 18px;
-    position: fixed;
-    left: 50vh;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #C170FF;
-    width: 100vh;
-    height: 10vh;
-    padding-right: 15px;
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+    color: #333;
 }
-.title-text{
-    font-style: bold;
-    font-size: 8vh;
-    
+
+main {
+    background: #fff;
+    width: 900px;
+    max-width: 95vw;
+    padding: 2.5rem 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 40px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    text-align: center;
+}
+
+.title-text {
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 5rem);
     animation: changeColor 5s infinite linear;
 }
 
 .content-box {
-    background-color: #f1f1f1;
-    position: fixed;
-    top: 25vh;
-    left: 50vh;
-    padding: 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #C170FF;
-    width: 100vh;
-    height: 60vh; /* Ajuste conforme necessário para 5 contatos */
-    padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.welcome-message{
-    background-color: #ffff;
-    position: absolute;
-    width: 40vh;
-    height: 50vh;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px #b24eff;
+.welcome-message,
+.button-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    flex: 1 1 350px;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-message p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
 }
 
 .button-container {
-    background-color: #ffffff;
-    position: absolute;
-    right: 3vh;
-    width: 40vh;
-    height: 50vh;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px #FF97EE;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 button {
-    background: none;
-    border: none;
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    padding: 12px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px #FF97EE;
-    height: 24vh;
-    width: 40vh;
-    margin-bottom: 10px;
-    background-color: #ffffff;
+    box-shadow: 0 6px 15px var(--btn-shadow-color);
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    user-select: none;
 }
-button:hover {
-    background-color: #b798ff;
-    transform: scale(1.1);
-    transition: all 0.3s ease;  
+
+button:hover,
+button:focus {
+    background-color: var(--primary-color);
+    color: #fff;
+    outline: none;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -1,34 +1,104 @@
-body {
-    display: grid;
-    grid-template-columns: 110px 1fr;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    padding: 5vh;
+    box-sizing: border-box;
 }
-.title {
-    background-color: #f1f1f1;
-    padding: 18px;
-    position: fixed;
-    left: 50vh;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #C170FF;
-    width: 100vh;
-    height: 10vh;
-    padding-right: 15px;
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #333;
 }
 
-.content-box {
-    background-color: #f1f1f1;
-    position: fixed;
-    top: 25vh;
-    left: 50vh;
-    padding: 18px;
+main {
+    background: #fff;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 400px;
+    max-width: 90vw;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.title h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #7b2ff7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="tel"] {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px #C170FF;
-    width: 100vh;
-    height: 60vh; /* Ajuste conforme necessário para 5 contatos */
-    padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    border-color: #7b2ff7;
+    outline: none;
+}
+
+.cad-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-cad {
+    background-color: #7b2ff7;
+    color: white;
+    padding: 0.85rem 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.button-cad:hover {
+    background-color: #f107a3;
+}
+
+.link-cad {
+    color: #7b2ff7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.link-cad:hover {
+    color: #f107a3;
+    text-decoration: underline;
 }

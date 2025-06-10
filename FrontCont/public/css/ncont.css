@@ -1,102 +1,122 @@
 :root {
-    --tamanho:60px;
+    --primary-color: #f107a3;
+    --secondary-color: #7b2ff7;
+    --tamanho: 60px;
+    --cor-primaria: #C170FF;
+    --cor-fundo: #f4f0fa; /* Antes: #f8f9fa */
+    --cor-caixa: #8b36a0; /* Antes: #ffffff */
+    --cor-hover: #e9e4f0; /* Antes: #f1f1f1 */
+    --sombra: 0 4px 10px rgba(0, 0, 0, 0.08); /* leve ajuste */
+    --borda-radius: 12px;
+    --padding-box: 20px;
+    --transicao: all 0.3s ease;
 }
+
+
 /* Principais */
 body {
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 100px 1fr;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    background: linear-gradient(180deg, #f0f0fa 0%, #ecdcff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 aside {
-    background-color: #f5f5f5;
-    padding: 20px;
+    background: linear-gradient(180deg, #e9defa, #f4e8ff); /* Mais suave */
+    padding: 15px 10px;
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px #C170FF;
-    min-height: 80vh;
+    box-shadow: var(--sombra);
     position: relative;
 }
 
 main {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
 }
 
 /* Section */
 .content-box {
-    background-color: #f1f1f1;
-    padding: 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #C170FF;
-    width:100vh;
-    max-height: 88vh; /* Ajuste conforme necessário para 5 contatos */
-    padding-right: 15px; /* Para dar espaço para a barra de rolagem */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: var(--padding-box);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+    overflow-y: auto;
+    max-height: 88vh;
+    transition: var(--transicao);
+    width: 100vh;
+    margin-left: 35vh;
+}
+
+.content-box h2 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+    font-size: 24px;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 10px;
 }
 
 .detalhes-item {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 500;
     text-align: left;
     margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #C170FF;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
     height: 65vh;
-    background-color: #ffff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     position: relative;
+    padding: var(--padding-box);
     padding-bottom: 80px;
 }
 
-.content-detalhe{
-    border-bottom: 2px solid #000;
-    padding-bottom: 1px;
-    margin-bottom: 20px;
+.content-detalhe {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .edit-input-field {
+    display: block;
     width: 98%;
+    padding: 6px 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
 }
-
-
-
 
 /* Botões da lateral */
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
+    margin: 15px 0;
     width: 100%;
 }
 
 .image-button {
-    background: none;
+    background: #fff;
     border: none;
+    border-radius: 10px;
+    padding: 10px;
     cursor: pointer;
-    padding: 12px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: var(--transicao);
+    box-shadow: var(--sombra);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px #C170FF;
 }
 
 .image-button:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.1);
-    transition: all 0.3s ease;  
+    background-color: var(--cor-hover);
+    transform: scale(1.05);
 }
 
 .button-icon {
@@ -105,23 +125,24 @@ main {
     object-fit: contain;
 }
 
-
 /* Botão de confirmar */
-
 .button-confirm {
-    background-color: #64ff9f;
     position: absolute;
-    bottom: 3vh;
+    bottom: 6vh;
     left: 50%;
     transform: translateX(-50%);
-    border: #f1f1f1;
-    border-radius: 5px;
-    font-size: 5vh;
-    padding: 3vh;
-    box-shadow: 0 2px 5px #C170FF;
+    background-color: #B185FF; /* Roxo pastel */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao);
 }
+
 .button-confirm:hover {
-    background-color: #f0ff68;
-    transform: translateX(-50%) scale(1.1);
-    transition: all 0.3s ease;  
+    background-color: #9f6fff;
+    transform: translateX(-50%) scale(1.05);
 }
