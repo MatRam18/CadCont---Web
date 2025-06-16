@@ -19,7 +19,7 @@
             </button>
         </div>
         <div class="button-container">
-            <button class="image-button">
+            <button class="image-button" id="profileBtn">
                 <img src="{{ asset('images/Profile.png') }}" alt="Perfil" class="button-icon">
             </button>
         </div>
@@ -62,6 +62,12 @@
         if (logoutBtn) {
             logoutBtn.addEventListener('click', function() {
                 window.location.href = '/';
+            });
+        }
+        const profileBtn = document.getElementById('profileBtn');
+        if (profileBtn) {
+            profileBtn.addEventListener('click', function() {
+                window.location.href = '/profile';
             });
         }
 

@@ -6,8 +6,8 @@
 }
 
 :root {
-    --cor-primaria: #7C3AED;
-    --cor-secundaria: #4F46E5;
+    --cor-primaria: #3a9ced;
+    --cor-secundaria: #8400ff;
     --cor-fundo: #F9FAFB;
     --cor-caixa: #ffffff;
     --cor-texto: #1F2937;
@@ -21,7 +21,7 @@
 body, html {
     height: 100%;
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    background: linear-gradient(190deg, var(--cor-primaria), var(--cor-secundaria));
     display: flex;
     justify-content: center;
     align-items: center;

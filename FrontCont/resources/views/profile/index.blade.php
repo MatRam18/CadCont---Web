@@ -3,41 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{'css/app.css'}}">
     <title>Perfil</title>
+    <link rel="stylesheet" href="{{ asset('css/pro.css') }}">  
+    
 </head>
 <body>
-<header>
-        <h1>
-            CAD CONTACT
-        </h1>
-        <h1>
-            Cadastro de Contatos
-        </h1>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="/homepage">Home</a>
-                <a href="http://eelslap.com/">Serviços</a>
-                <button onclick="window.location.href='/login'">Sair</button>
-            </li>
-        </ul>
-    </nav>
+    <aside>
+        <div class="button-container">
+            <button class="image-button" id="criarContatoBtn">
+                <img src="{{ asset('images/Criar.png') }}" alt="Contato" class="button-icon">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="image-button" id="logoutBtn">
+                <img src="{{ asset('images/logout.png') }}" alt="Logout" class="button-icon">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="image-button" id="contatoBtn">
+                <img src="{{ asset('images/contato.png') }}" alt="Perfil" class="button-icon">
+            </button>
+        </div>
+    </aside>
     <main>
-        <section>
-            <img src="" alt="Perfil">
-            <h1>Perfil</h1>
-            <h1>Nome:</h1>
-            <h1>Email:</h1>
-            <h1>Senha:</h1>
-            <button onclick="window.location.href='/profiledit'">Editar Perfil</button>
+        <section class="content-box">
+        <h2>Perfil</h2>
+           
         </section>
     </main>
-    <footer>
-        <p>
-            &copy; 2024 Cadastro de Contatos. Todos os direitos reservados.
-        </p>
-    </footer>
+    <script>
+        // Adiciona o evento de clique para o botão "Criar Contato"
+        const criarContatoBtn = document.getElementById('criarContatoBtn');
+        if (criarContatoBtn) {
+            criarContatoBtn.addEventListener('click', function() {
+                window.location.href = '/newcontact';
+            });
+        }
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function() {
+                window.location.href = '/';
+            });
+        }
+        const contatoBtn = document.getElementById('contatoBtn');
+        if (contatoBtn) {
+            contatoBtn.addEventListener('click', function() {
+                window.location.href = '/homepage';
+            });
+        }
+    </script>
 </body>
 </html>

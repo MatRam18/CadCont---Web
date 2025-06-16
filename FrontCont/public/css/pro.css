@@ -19,7 +19,7 @@ body {
     grid-template-columns: 100px 1fr;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(180deg, #f0f0fa 0%, #e3ccff 100%);
+    background: linear-gradient(180deg, #dcfdff 0%, #ffd0fd 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -33,7 +33,6 @@ aside {
     box-shadow: var(--sombra);
     position: relative;
 }
-
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -60,38 +59,6 @@ main {
     font-size: 24px;
     border-bottom: 2px solid var(--cor-primaria);
     padding-bottom: 10px;
-}
-
-.detalhes-item {
-    font-size: 18px;
-    font-weight: 500;
-    text-align: left;
-    margin-bottom: 10px;
-    border-radius: var(--borda-radius);
-    box-shadow: var(--sombra);
-    height: 65vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    position: relative;
-    padding: var(--padding-box);
-    padding-bottom: 80px;
-}
-
-.content-detalhe {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-}
-
-.edit-input-field {
-    display: block;
-    width: 98%;
-    padding: 6px 10px;
-    font-size: 16px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fefefe;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
 }
 
 /* Botões na lateral */
@@ -123,26 +90,4 @@ main {
     width: var(--tamanho);
     height: var(--tamanho);
     object-fit: contain;
-}
-
-/* Botão de confirmar */
-.button-confirm {
-    position: absolute;
-    bottom: 6vh;
-    left: 57%;
-    transform: translateX(-50%);
-    background-color: #B185FF; /* Roxo pastel */
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transicao);
-}
-
-.button-confirm:hover {
-    background-color: #9f6fff;
-    transform: translateX(-50%) scale(1.05);
 }
