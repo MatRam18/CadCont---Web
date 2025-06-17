@@ -129,7 +129,7 @@ main {
 .button-confirm {
     position: absolute;
     bottom: 6vh;
-    left: 57%;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #B185FF; /* Roxo pastel */
     color: #fff;

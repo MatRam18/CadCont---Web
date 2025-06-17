@@ -12,7 +12,8 @@
             <h1>Cadastro</h1>
         </div>
         <section class="content-box">
-            <form action="">
+            <form action="/cadastro" method="POST">
+                @csrf
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu email" required />
 
@@ -32,6 +33,11 @@
                     <button type="submit" class="button-cad">Cadastrar</button>
                     <a href="/login" class="link-cad">Já possui uma conta? Faça login</a>
                 </div>
+                @if($errors->any())
+                    <div style="color:red; margin-top:10px;">
+                        {{ $errors->first() }}
+                    </div>
+                @endif
             </form>
         </section>
     </main>

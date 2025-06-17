@@ -179,7 +179,7 @@
             const logoutBtn = document.getElementById('logoutBtn');
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', function() {
-                    window.location.href = '/';
+                    window.location.href = '/logout';
                 });
             }
             const perfilBtn = document.getElementById('perfilBtn');
